@@ -6,13 +6,17 @@ import PopNewCard from './components/PopNewCard/PopNewCard';
 import PopUser from './components/PopUser/PopUser';
 
 function App() {
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+}
+
+function App() {
   return (
     <div className="wrapper">
-      <Header />
+      <Header toggleMenu={() => setIsUserMenuOpen(!isUserMenuOpen)} />
       <Main />
       <PopBrowse />
       <PopNewCard />
-      <PopUser />
+      <PopUser isOpen={isUserMenuOpen} />
     </div>
   );
 }
